@@ -81,7 +81,7 @@ class _ConverterPageState extends State<ConverterPage> {
     double? value = double.tryParse(valueController.text);
     if (value == null) {
       setState(() {
-        errorMessage = "Invalid input! Enter a number.";
+        errorMessage = "Invalid input. Enter a number.";
       });
       return;
     }
@@ -145,9 +145,9 @@ class _ConverterPageState extends State<ConverterPage> {
     }
 
     return Container(
-      decoration: const BoxDecoration(
+      decoration:  BoxDecoration(
         gradient: LinearGradient(
-          colors: [Color(0xFFE3F2FD), Color(0xFFBBDEFB)],
+          colors: [Colors.lightBlue.shade100, Colors.lightBlue.shade200],
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
         ),
@@ -203,7 +203,7 @@ class _ConverterPageState extends State<ConverterPage> {
                   borderRadius: BorderRadius.circular(14),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black12,
+                      color: Colors.black,
                       blurRadius: 8,
                       offset: const Offset(0, 4),
                     ),
