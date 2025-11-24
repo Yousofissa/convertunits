@@ -88,7 +88,7 @@ class _ConverterPageState extends State<ConverterPage> {
 
     double converted = value;
 
-    // Length conversions
+
     if (category == "Length") {
       if (fromUnit == "Meter" && toUnit == "Kilometer") {
         converted = value / 1000;
@@ -105,7 +105,7 @@ class _ConverterPageState extends State<ConverterPage> {
       }
     }
 
-    // Weight conversions
+
     else if (category == "Weight") {
       if (fromUnit == "Kilogram" && toUnit == "Gram") {
         converted = value * 1000;
@@ -114,7 +114,7 @@ class _ConverterPageState extends State<ConverterPage> {
       }
     }
 
-    // Temperature conversions
+
     else if (category == "Temperature") {
       if (fromUnit == "Celsius" && toUnit == "Fahrenheit") {
         converted = (value * 9 / 5) + 32;
@@ -136,7 +136,7 @@ class _ConverterPageState extends State<ConverterPage> {
   Widget build(BuildContext context) {
     List<String> currentUnits = getUnitsForCategory(category);
 
-    // Fix: ensure units always exist
+
     if (!currentUnits.contains(fromUnit)) {
       fromUnit = currentUnits.first;
     }
@@ -288,7 +288,7 @@ class _ConverterPageState extends State<ConverterPage> {
     );
   }
 
-  // CATEGORY BUTTON WIDGET
+
   Widget buildCategoryButton(String text) {
     bool selected = (category == text);
 
@@ -306,7 +306,7 @@ class _ConverterPageState extends State<ConverterPage> {
     );
   }
 
-  // DROPDOWN WIDGET
+
   Widget buildDropdown(String label, List<String> items, String value,
       Function(String?) onChanged) {
     return Column(
