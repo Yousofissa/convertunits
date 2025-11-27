@@ -12,10 +12,6 @@ class UnitConverterApp extends StatelessWidget {
     return MaterialApp(
       title: 'Unit Converter',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        scaffoldBackgroundColor: Colors.transparent,
-      ),
       home: const ConverterPage(),
     );
   }
@@ -42,11 +38,11 @@ class _ConverterPageState extends State<ConverterPage> {
   final List<String> weightUnits = ["Kilogram", "Gram"];
   final List<String> tempUnits = ["Celsius", "Fahrenheit", "Kelvin"];
 
-  List<String> getUnitsForCategory(String cat) {
-    if (cat == "Length") {
+  List<String> getUnitsForCategory(String category) {
+    if (category == "Length") {
       return lengthUnits;
     }
-    if (cat == "Weight") {
+    if (category == "Weight") {
       return weightUnits;
     }
     return tempUnits;
@@ -71,7 +67,7 @@ class _ConverterPageState extends State<ConverterPage> {
       resultText = "";
     });
 
-    if (valueController.text.trim().isEmpty) {
+    if (valueController.text.isEmpty) {
       setState(() {
         errorMessage = "Please enter a value to convert.";
       });
@@ -148,15 +144,14 @@ class _ConverterPageState extends State<ConverterPage> {
       decoration:  BoxDecoration(
         gradient: LinearGradient(
           colors: [Colors.lightBlue.shade100, Colors.lightBlue.shade200],
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
+
         ),
       ),
       child: Scaffold(
         backgroundColor: Colors.transparent,
 
         appBar: AppBar(
-          elevation: 0,
+
           backgroundColor: Colors.transparent,
           title: const Text(
             "Unit Converter",
@@ -194,7 +189,7 @@ class _ConverterPageState extends State<ConverterPage> {
                 ],
               ),
 
-              const SizedBox(height: 24),
+              const SizedBox(height:25),
 
               Container(
                 padding: const EdgeInsets.all(15),
@@ -314,7 +309,7 @@ class _ConverterPageState extends State<ConverterPage> {
       children: [
         Text(label,
             style: const TextStyle(
-                fontSize: 16, fontWeight: FontWeight.w500)),
+                fontSize: 16, )),
         const SizedBox(height: 6),
         DropdownButtonFormField<String>(
           initialValue: value,
